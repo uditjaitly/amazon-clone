@@ -11,7 +11,7 @@ const Product =(props) =>{
                         </a>
                         <div className="card-body">
                             <div>
-                                <a href="product.html">
+                                <a href={`/product/${product._id}`}>
                                     <h2>{product.name}</h2>
                                 </a>
                             </div>
