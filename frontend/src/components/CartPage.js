@@ -31,9 +31,9 @@ export default function CartPage(props) {
           	      
             <div className="col-2">
             <h1>Shopping Cart</h1>
-              {cartItems.length === 0 ? (
+              {cart.length === 0 ? (
                   <MessageBox>
-                Cart is empty. <Link to="/">Go Shopping</Link>
+                No items in cart... <Link to="/">Continue Shopping</Link>
               </MessageBox>
             ) : (
               <ul>
