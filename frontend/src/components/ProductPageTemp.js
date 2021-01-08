@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react'
+import React, { useEffect , useState} from 'react'
 import Ratings from './Ratings'
 import {useSelector, useDispatch} from 'react-redux'
 import {detailsOfProducts} from '../actions/productActions'
@@ -8,6 +8,7 @@ import Loading from './Loading'
 const ProductPage=(props)=>{
 
     const dispatch = useDispatch();
+    const [quantity, handleQuantity] = useState(1);
     const productId=props.match.params.id;
     console.log(productId)
     const productDetails=useSelector((state)=>state.productDetails)
@@ -18,6 +19,10 @@ const ProductPage=(props)=>{
     
     console.log(products)
    
+    const handleAddToCart=()=>{
+        props.history.push(`/cart/${productId}?quantity=${quantity}`)
+
+    }
   
 
     return(
@@ -59,10 +64,30 @@ const ProductPage=(props)=>{
                                 </div>
                             
                             </li>
-                            <li>
-                                <button className="primary-add"> Add To Cart</button>
-                            
-                            </li>
+                            {
+                                products.count > 0  && (
+                                    <li>
+                                        <div className="row">
+                                            <div>Quantity</div>
+                                            <div>
+                                                <select value={quantity} onChange={e=>handleQuantity(e.target.value)}>
+                                                    {[...Array(products.count).keys()].map(
+                                                        (x)=>(
+                                                            <option key={x+1} value={x+1}>{x+1}</option>
+                                                        )
+
+                                                    )}
+                                                </select>
+                                            </div>
+                                        
+                                        </div>
+                                        <button onClick={handleAddToCart} className="primary-add"> Add To Cart</button>
+                                
+                                    </li>
+                                )
+
+                            }
+                           
                         </ul>
                     </div>
                 

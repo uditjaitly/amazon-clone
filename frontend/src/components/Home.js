@@ -16,6 +16,7 @@ const Home = () =>{
         <div >
             {
                 loading ? (<Loading/> ) : error ? (<MessageBox variant="danger">{error}</MessageBox>):
+            
                 
             <div className="row center">
             {

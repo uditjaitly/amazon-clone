@@ -188,13 +188,24 @@ button:hover{
   border-radius: 0.5rem;
 
 }
-
+.min-30 {
+  min-width: 30rem;
+}
 .alert-info{
   color:black;
   background-color: white;
 }
-
-
+.badge{
+  background-color: orange;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 0.2rem 0.7rem;
+  font-size:1.4rem;
+}
+img.small {
+  max-width: 5rem;
+  width: 100%;
+}
 .alert-danger{
   color:red;
   background-color: white;
