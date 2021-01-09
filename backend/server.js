@@ -1,30 +1,23 @@
 import express from 'express'
-import data from './data.js'
 import mongoose from 'mongoose'
+import dotenv from 'dotenv'
 import userRouter from './routers/userRouter.js';
+import productRouter from './routers/productRouter.js';
 const app = express();
-
+app.use(express.json());
+app.use(express.urlencoded({extended:true}))
+dotenv.config();
 
 mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/amazon',{
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
 })
-app.get('/api/products/:id',(req,res)=>{
-  
-    const productDetails = data.products.find((x)=> x._id===req.params.id);
-    if(productDetails){
-        res.send(productDetails);
-    }
-    else{
-        res.status(404).send({message:"Product Not Found"})
-    }
-})
 
-app.get('/api/products',(req,res)=>{
-    res.send(data.products)
-})
+
+
 app.use('/api/users', userRouter);
+app.use('/api/products', productRouter)
 app.get('/',(req,res)=>{
     res.send("server ready")
 })

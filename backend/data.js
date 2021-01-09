@@ -3,8 +3,8 @@ import bcrypt from 'bcryptjs'
     users:[
         {
             name:'Udit',
-            email:'udit@example.com',
-            password:bcrypt.hashSync('1996',8),
+            email:"udit@example.com",
+            password:bcrypt.hashSync("1996",8),
             isAdmin:true
 
         },
@@ -18,7 +18,7 @@ import bcrypt from 'bcryptjs'
     ],
     products:[
         {
-            _id:'1',
+          
             name:"Playstation 4 Bundle",
             category:"videogames",
             images:"p1",
@@ -30,7 +30,7 @@ import bcrypt from 'bcryptjs'
             count:5
         },
         {
-            _id:'2',
+         
             name:"Playstation 5",
             category:"videogames",
             images:"p2",
@@ -42,7 +42,7 @@ import bcrypt from 'bcryptjs'
             count:0
         },
         {
-            _id:'3',
+          
             name:"Xbox One S",
             category:"videogames",
             images:"p3",
@@ -55,7 +55,7 @@ import bcrypt from 'bcryptjs'
             count:8
         },
         {
-            _id:'4',
+         
             name:"Kindle 2020",
             category:"electronics",
             images:"p4",
@@ -68,7 +68,7 @@ import bcrypt from 'bcryptjs'
             count:32
         },
         {
-            _id:'5',
+         
             name:"Pedigree",
             category:"pets",
             images:"p5",

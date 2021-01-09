@@ -175,7 +175,7 @@ button{
 
 }
 
-.primary-add{
+.primary.add{
   background-color: #f0c040;
   width:100%;
 }
@@ -213,4 +213,42 @@ img.small {
   color: #2020a0;
   background-color: #e0e0ff;
   font-size: 1.4rem;
+}
+
+.form{
+  font-size: 1.4rem;
+  margin: 0 auto;
+  width: 35rem;
+}
+
+.form > div {
+  
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  
+}
+
+.form label{
+  margin: 1rem 0;
+  display: block;
+}
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown-content {
+  position: absolute;
+  display: none;
+  right: 0;
+  min-width: 12rem;
+  padding: 1rem;
+  z-index: 1;
+  background-color: #203040;
+  margin: 0;
+  margin-top: 0.4rem;
+  border-radius: 0.5rem;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
 }
